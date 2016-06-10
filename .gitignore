@@ -1,3 +1,9 @@
+.idea/
+out/
+*.iml
+*.iws
+proguard-project.txt
+
 # Built application files
 *.apk
 *.ap_
@@ -38,3 +44,15 @@ captures/
 
 # Keystore files
 *.jks
+
+# Maven
+log/
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Mac
+.DS_Store
