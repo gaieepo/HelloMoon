@@ -2,6 +2,7 @@ package com.example.HelloMoon;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.view.SurfaceHolder;
 
 /**
  * Created by gaieepo on 10/6/2016.
@@ -9,6 +10,11 @@ import android.media.MediaPlayer;
 public class AudioPlayer {
     private MediaPlayer mPlayer;
     private boolean isPause;
+    private SurfaceHolder mSurfaceHolder;
+
+    public void setSurfaceHolder(SurfaceHolder surfaceHolder) {
+        mSurfaceHolder = surfaceHolder;
+    }
 
     public void stop() {
         if (mPlayer != null) {
@@ -25,6 +31,7 @@ public class AudioPlayer {
             stop();
 
             mPlayer = MediaPlayer.create(c, R.raw.one_small_step);
+            mPlayer.setDisplay(mSurfaceHolder);
 
             mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
